@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodations - Taniti Tourism</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="accommodations">
+    <header>
+        <nav class="desktop-nav">
+            <div class="logo">
+                <img src="images/logo.png" alt="Taniti Tourism Logo">
+            </div>
+            <div class="search-and-nav">
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                    <button type="submit">Search</button>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Taniti</a></li>
+                    <li><a href="attractions.html">Attractions</a></li>
+                    <li><a href="accommodations.html" class="current">Accommodations</a></li>
+                    <li><a href="dining.html">Dining</a></li>
+                    <li><a href="transportation.html">Transportation</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="mobile-nav">
+            <div class="logo">
+                <img src="images/logo.png" alt="Taniti Tourism Logo">
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search">
+                <button type="submit">Search</button>
+            </div>
+            <button class="hamburger-menu" aria-label="Open navigation menu">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">ACCOMMODATIONS</h1>
+        <div class="content-grid">
+            <div class="item-grid">
+                <div class="item" data-id="hostel">
+                    <img src="images/hostel.jpg" alt="Inexpensive Hostel">
+                    <h3>Hostel</h3>
+                </div>
+                <div class="item" data-id="resort">
+                    <img src="images/resort.jpg" alt="Four-star Resort">
+                    <h3>Four-star Resort</h3>
+                </div>
+                <div class="item" data-id="family-hotel">
+                    <img src="images/family-hotel.jpg" alt="Family-owned Hotel">
+                    <h3>Family-owned Hotels</h3>
+                </div>
+                <div class="item" data-id="bnb">
+                    <img src="images/bed-and-breakfast.jpg" alt="Bed and Breakfast">
+                    <h3>Bed and Breakfasts</h3>
+                </div>
+            </div>
+            <div class="item-details">
+                <h2>Click an accommodation type to view details</h2>
+                <div id="item-info"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Taniti Tourism. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <nav class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Taniti</a></li>
+            <li><a href="attractions.html">Attractions</a></li>
+            <li><a href="accommodations.html" class="current">Accommodations</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="booking.html">Booking</a></li>
+        </ul>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>

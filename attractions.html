@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractions - Taniti Tourism</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="attractions">
+    <header>
+        <nav class="desktop-nav">
+            <div class="logo">
+                <img src="images/logo.png" alt="Taniti Tourism Logo">
+            </div>
+            <div class="search-and-nav">
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                    <button type="submit">Search</button>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Taniti</a></li>
+                    <li><a href="attractions.html" class="current">Attractions</a></li>
+                    <li><a href="accommodations.html">Accommodations</a></li>
+                    <li><a href="dining.html">Dining</a></li>
+                    <li><a href="transportation.html">Transportation</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="mobile-nav">
+            <div class="logo">
+                <img src="images/logo.png" alt="Taniti Tourism Logo">
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search">
+                <button type="submit">Search</button>
+            </div>
+            <button class="hamburger-menu" aria-label="Open navigation menu">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">ATTRACTIONS</h1>
+        <div class="content-grid">
+          <div class="item-grid">
+              <div class="item" data-id="beaches">
+                  <img src="images/beaches.jpg" alt="Beaches">
+                  <h3>Beaches</h3>
+              </div>
+              <div class="item" data-id="rainforest">
+                  <img src="images/rainforest.jpg" alt="Rainforest">
+                  <h3>Rainforest</h3>
+              </div>
+              <div class="item" data-id="volcano">
+                  <img src="images/volcano.jpg" alt="Active Volcano">
+                  <h3>Active Volcano</h3>
+              </div>
+              <div class="item" data-id="city">
+                  <img src="images/taniti-city.jpg" alt="Taniti City">
+                  <h3>Taniti City</h3>
+              </div>
+              <div class="item" data-id="tours">
+                  <img src="images/island-tours.jpg" alt="Island Tours">
+                  <h3>Island Tours</h3>
+              </div>
+              <div class="item" data-id="activities">
+                  <img src="images/activities.jpeg" alt="Other Activities">
+                  <h3>Other Activities</h3>
+              </div>
+          </div>
+          <div class="item-details">
+            <h2>Click an option to view details</h2>
+            <div id="item-info"></div>
+          </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Taniti Tourism. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <nav class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Taniti</a></li>
+            <li><a href="attractions.html" class="current">Attractions</a></li>
+            <li><a href="accommodations.html">Accommodations</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="booking.html">Booking</a></li>
+        </ul>
+    </nav>
+
+    <script src="script.js"></script>
+   
+</body>
+</html>

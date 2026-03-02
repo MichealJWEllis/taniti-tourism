@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - Taniti Tourism</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="booking">
+    <header>
+        <nav class="desktop-nav">
+            <div class="logo">
+                <img src="images/logo.png" alt="Taniti Tourism Logo">
+            </div>
+            <div class="search-and-nav">
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                    <button type="submit">Search</button>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Taniti</a></li>
+                    <li><a href="attractions.html">Attractions</a></li>
+                    <li><a href="accommodations.html">Accommodations</a></li>
+                    <li><a href="dining.html">Dining</a></li>
+                    <li><a href="transportation.html">Transportation</a></li>
+                    <li><a href="booking.html" class="current">Booking</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="mobile-nav">
+            <div class="logo">
+                <img src="images/logo.png" alt="Taniti Tourism Logo">
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search">
+                <button type="submit">Search</button>
+            </div>
+            <button class="hamburger-menu" aria-label="Open navigation menu">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">BOOKING</h1>
+
+        <div id="confirmation-banner" class="confirmation-banner" style="display:none;">
+            <p>✅ Your booking has been submitted! A confirmation will be sent to your email.</p>
+        </div>
+
+        <div class="booking-layout" id="booking-form-area">
+            <div class="booking-form-section">
+                <h2>Reservation Details</h2>
+
+                <div class="form-group">
+                    <label for="accommodation">Accommodation Type</label>
+                    <select id="accommodation">
+                        <option value="">-- Select --</option>
+                        <option value="hostel">Hostel</option>
+                        <option value="resort">Four-star Resort</option>
+                        <option value="family-hotel">Family-owned Hotel</option>
+                        <option value="bnb">Bed and Breakfast</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkin">Check-in Date</label>
+                    <input type="date" id="checkin">
+                </div>
+
+                <div class="form-group">
+                    <label for="checkout">Check-out Date</label>
+                    <input type="date" id="checkout">
+                </div>
+
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <input type="number" id="guests" min="1" max="10" placeholder="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Jane Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="jane@example.com">
+                </div>
+            </div>
+
+            <div class="payment-section">
+                <h2>Payment Details</h2>
+
+                <div class="form-group">
+                    <label for="card-name">Name on Card</label>
+                    <input type="text" id="card-name" placeholder="Jane Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" placeholder="•••• •••• •••• ••••" maxlength="19">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiry">Expiry Date</label>
+                        <input type="text" id="expiry" placeholder="MM/YY" maxlength="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" placeholder="•••" maxlength="3">
+                    </div>
+                </div>
+
+                <p class="currency-note">💱 Taniti accepts USD, euros, and yen. Major credit cards accepted.</p>
+
+                <button id="submit-booking" class="submit-btn">Confirm Booking</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Taniti Tourism. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <nav class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Taniti</a></li>
+            <li><a href="attractions.html">Attractions</a></li>
+            <li><a href="accommodations.html">Accommodations</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="booking.html" class="current">Booking</a></li>
+        </ul>
+    </nav>
+
+    <script src="script.js"></script>
+    <script>
+        // Mobile menu
+        const hamburger = document.querySelector('.hamburger-menu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        if (hamburger && mobileMenu) {
+            hamburger.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+        }
+
+        // Card number formatting
+        document.getElementById('card-number').addEventListener('input', function () {
+            let v = this.value.replace(/\D/g, '').substring(0, 16);
+            this.value = v.replace(/(.{4})/g, '$1 ').trim();
+        });
+
+        // Expiry formatting
+        document.getElementById('expiry').addEventListener('input', function () {
+            let v = this.value.replace(/\D/g, '').substring(0, 4);
+            if (v.length >= 3) v = v.substring(0, 2) + '/' + v.substring(2);
+            this.value = v;
+        });
+
+        // Submit
+        document.getElementById('submit-booking').addEventListener('click', function () {
+            const required = ['accommodation', 'checkin', 'checkout', 'guests', 'name', 'email', 'card-name', 'card-number', 'expiry', 'cvv'];
+            const empty = required.filter(id => !document.getElementById(id).value.trim());
+
+            if (empty.length > 0) {
+                alert('Please fill in all fields before submitting.');
+                return;
+            }
+
+            const checkin = new Date(document.getElementById('checkin').value);
+            const checkout = new Date(document.getElementById('checkout').value);
+            if (checkout <= checkin) {
+                alert('Check-out date must be after check-in date.');
+                return;
+            }
+
+            document.getElementById('booking-form-area').style.display = 'none';
+            const banner = document.getElementById('confirmation-banner');
+            banner.style.display = 'block';
+            banner.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
