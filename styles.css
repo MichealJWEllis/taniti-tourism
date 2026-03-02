@@ -472,6 +472,46 @@ footer {
     color: #155724;
 }
 
+/* FAQ / Travel Tips page */
+.faq-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.faq-card h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+.faq-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.safety-card {
+    border-left: 4px solid #dc3545;
+}
+
+@media screen and (max-width: 768px) {
+    .faq-content {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .booking-layout {
         flex-direction: column;
